@@ -5,6 +5,7 @@ module.exports = {
   gitAuthor: 'Renovate Bot <renovatebot@clickds.dev>',
   labels: ['renovate', 'dependencies', 'automated'],
   assignees: ['james', 'adam', 'brad'],
+  assigneesSampleSize: 1,
   onboarding: true,
   onboardingConfig: {
     extends: ['config:base'],
