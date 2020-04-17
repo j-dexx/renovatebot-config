@@ -1,0 +1,15 @@
+image:
+  name: renovate/renovate
+  entrypoint: ['']
+
+stages:
+  - renovate
+
+before_script:
+  - cp config.js /usr/src/app/config.js
+
+renovate:
+  stage: renovate
+  only:
+    - master
+  script: 'node /usr/src/app/dist/renovate.js'
