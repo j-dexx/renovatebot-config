@@ -6,6 +6,6 @@ services:
 renovate:
   stage: build
   script:
-    - docker run -e RENOVATE_TOKEN="$GITLAB_TOKEN" -v $PWD/config.js:/usr/src/app/config.js renovate/renovate:19 $(cat repositories.txt | xargs)
+    - docker run -e RENOVATE_TOKEN="$RENOVATE_TOKEN" -v $PWD/config.js:/usr/src/app/config.js renovate/renovate:19 $(cat repositories.txt | xargs)
   only:
     - master
