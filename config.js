@@ -10,5 +10,4 @@ module.exports = {
   onboardingConfig: {
     extends: ['config:base'],
   },
-  repositories: ['internal/laravel-ci-cd'],
 };
