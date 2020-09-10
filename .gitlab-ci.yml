@@ -1,11 +1,12 @@
-image: docker:latest
-
-services:
-  - docker:dind
-
 renovate:
-  stage: build
+  variables:
+    RENOVATE_TOKEN: $GITLAB_TOKEN
+    GITHUB_COM_TOKEN: $GITHUB_TOKEN
+  image:
+    name: renovate/renovate
+    entrypoint: ['']
   script:
-    - docker run -e RENOVATE_TOKEN="$RENOVATE_TOKEN" -v $PWD/config.js:/usr/src/app/config.js renovate/renovate:19 $(cat repositories.txt | xargs)
+    - ln -sF $CI_PROJECT_DIR/config.js /usr/src/app/
+    - node /usr/src/app/dist/renovate.js
   only:
-    - master
+    - schedules
