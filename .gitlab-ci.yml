@@ -9,4 +9,4 @@ renovate:
     - ln -sF $CI_PROJECT_DIR/config.js /usr/src/app/
     - node /usr/src/app/dist/renovate.js
   only:
-    - schedules
+    - master
