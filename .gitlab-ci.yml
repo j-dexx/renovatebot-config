@@ -1,12 +1,8 @@
 renovate:
-  variables:
-    RENOVATE_TOKEN: $GITLAB_TOKEN
-    GITHUB_COM_TOKEN: $GITHUB_TOKEN
-  image:
+  image: 
     name: renovate/renovate
-    entrypoint: ['']
+    entrypoint: [""]
+  before_script:
+    - cp config.js /usr/src/app/config.js
   script:
-    - ln -sF $CI_PROJECT_DIR/config.js /usr/src/app/
-    - node /usr/src/app/dist/renovate.js
-  only:
-    - master
+    - node /usr/src/app/dist/renovate.js $(cat repositories.txt | xargs)
