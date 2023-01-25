@@ -1,8 +1,8 @@
 module.exports = {
   platform: 'gitlab',
-  endpoint: 'https://git.clickds.dev/api/v4/',
+  endpoint: 'https://git.example.dev/api/v4/',
   token: process.env.RENOVATE_TOKEN,
-  gitAuthor: 'Renovate Bot <renovatebot@clickds.dev>',
+  gitAuthor: 'Renovate Bot <renovatebot@example.dev>',
   labels: ['renovate', 'dependencies', 'automated'],
   assignees: ['james', 'adam', 'brad'],
   assigneesSampleSize: 1,
